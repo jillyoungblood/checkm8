@@ -14,15 +14,21 @@ u4 = User.create(name:"Nick",email:"N@gmail.com",password:"a",password_confirmat
 
 t1 = Transaction.create(amount:30,from:b1.name,to:b2.name)
 t1.user = u1
+t1.save
 t2 = Transaction.create(amount:30,from:b2.name,to:b1.name)
 t2.user = u2
+t2.save
 t3 = Transaction.create(amount:30,from:b1.name,to:b2.name)
 t3.user = u3
+t3.save
 t4 = Transaction.create(amount:30,from:b4.name,to:b2.name)
 t4.user = u4
+t4.save
 t5 = Transaction.create(amount:30,from:b1.name,to:b4.name)
 t5.user = u1
+t5.save
 t6 = Transaction.create(amount:30,from:b3.name,to:b2.name)
 t6.user = u3
+t6.save
 
 
