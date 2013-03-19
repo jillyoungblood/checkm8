@@ -1,5 +1,6 @@
 class BanksController < ActionController::Base
 def show
-  binding.pry
+  @bank = Bank.find(params[:id])
+  @deposits = Transaction.where
 end
 end

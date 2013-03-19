@@ -1,8 +1,14 @@
-
-
-
-=link_to("Data", "#")
-=link_to("Graph", "#")
+.row
+  .small-12
+    %h1= @bank.name
+  #deposits
+    %h3 Deposits
+    = button_tag 'Data'
+    = button_tag 'Graph'
+  #withdrawals
+    %h3 Withdrawals
+    = button_tag 'Data'
+    = button_tag 'Graph'
 
 #main_show
   =render :partial => "data"
