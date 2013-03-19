@@ -23,9 +23,12 @@ describe User do
       expect(user.id).to be nil
     end
   end
-  # describe '#transactions' do
-  #   it 'has transactions' do
-
-  #   end
-  # end
+  describe '#transactions' do
+    it 'has transactions' do
+      transaction = FactoryGirl.create(:transaction)
+      user = FactoryGirl.create(:user)
+      user.transactions << transaction
+      expect(user.transactions.first).to be_an_instance_of(Transaction)
+    end
+  end
 end
