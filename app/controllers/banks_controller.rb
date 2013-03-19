@@ -1,5 +1,6 @@
 class BanksController < ActionController::Base
 def show
-  binding.pry
+  @banks = Bank.all
+  @transaction = Transaction.new
 end
 end

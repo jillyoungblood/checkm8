@@ -16,4 +16,10 @@ class Bank < ActiveRecord::Base
   def deposits
     Transaction.where(:to => self.name)
   end
+
+  # class method that displays all the names
+  def self.all_names
+    Bank.all.map(&:name).sort.uniq
+  end
+
 end

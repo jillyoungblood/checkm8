@@ -6,3 +6,7 @@
 
 #main_show
   =render :partial => "data"
+
+= link_to('Transfer', new_transaction_path, :class=>'button radius tiny', :remote=>true)
+- binding.pry
+#transaction_form
