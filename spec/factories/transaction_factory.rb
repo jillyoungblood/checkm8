@@ -3,6 +3,6 @@ FactoryGirl.define do
     amount  '100.00'
     from    'Bank of America'
     to      'Chase'
-    date    '3/20/2013'
+    dt      '3/20/2013'
   end
 end
