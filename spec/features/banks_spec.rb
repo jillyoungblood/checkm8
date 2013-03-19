@@ -23,3 +23,4 @@ describe 'Banks' do
         page.should have_css('table tr:nth-child(4) td:nth-child(1)', :text => 'Citibank')
     end
   end
+end
