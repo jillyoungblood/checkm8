@@ -4,5 +4,4 @@
 //= require 'foundation/js/foundation.min.js'
 //= require 'morris/spec/vendor/raphael-2.1.0.min.js'
 //= require 'morris/morris.min.js'
-//= require 'underscore-min.js'
 //= require 'checkm8.js'
