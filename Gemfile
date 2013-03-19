@@ -7,9 +7,9 @@ gem 'haml'
 gem 'bcrypt-ruby'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 group :development, :test do
@@ -25,7 +25,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'quiet_assets'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
 end
