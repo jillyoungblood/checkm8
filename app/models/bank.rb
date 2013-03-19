@@ -10,4 +10,10 @@
 
 class Bank < ActiveRecord::Base
   attr_accessible :name
+  def withdraws
+    Transaction.where(:from => self.name)
+  end
+  def deposits
+    Transaction.where(:to => self.name)
+  end
 end

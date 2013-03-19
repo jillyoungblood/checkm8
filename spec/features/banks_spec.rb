@@ -17,7 +17,6 @@ describe 'Banks' do
   describe 'POST /banks' do
       it 'banks should appear alphabetically', :js => true do
         visit root_path
-
         page.should have_css('table tr:nth-child(2) td:nth-child(1)', :text => 'Bank of America')
         page.should have_css('table tr:nth-child(3) td:nth-child(1)', :text => 'HSBC')
         page.should have_css('table tr:nth-child(4) td:nth-child(1)', :text => 'Citibank')
