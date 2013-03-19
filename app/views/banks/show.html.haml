@@ -1,5 +1,11 @@
+
 =link_to("Data", "#")
 =link_to("Graph", "#",id:"graphit")
+
+.row
+  .small-12
+    %h1= @bank.name
+
 #main_show
   =render :partial => "data"
   =render :partial => 'graph'
