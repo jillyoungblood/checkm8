@@ -1,8 +1,8 @@
 Checkm8::Application.routes.draw do
   root to:"home#index"
   resources :users
-
   resources :banks, :only => [:index, :new, :create, :show]
+  resources :transactions, :only => [:new, :create]
 
 <<<<<<< HEAD
 get "bank/graph" => 'banks#showgraph'

@@ -8,5 +8,7 @@
 
 #main_show
   =render :partial => "data"
-  =render :partial => 'graph'
+
+= link_to('Transfer', new_transaction_path, :class=>'button radius tiny', :remote=>true)
+#transaction_form
 #graph
