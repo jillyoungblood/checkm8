@@ -10,7 +10,7 @@
 
 class Bank < ActiveRecord::Base
   attr_accessible :name
-  def withdraws
+  def withdrawals
     Transaction.where(:from => self.name)
   end
   def deposits
@@ -22,4 +22,23 @@ class Bank < ActiveRecord::Base
     Bank.all.map(&:name).sort.uniq
   end
 
+  def transactions
+    k=[]
+    k = Transaction.where(:to => self.name)
+    k << Transaction.where(:from => self.name)
+    k.flatten
+  end
+  def sorted_trans
+    self.transactions.sort_by {|obj| obj.dt}
+  end
+  def transactionrecord
+    data =[]
+    balance = 0
+    self.sorted_trans.each do |trans|
+      change = (trans.from == self.name ? -trans.amount.to_f : trans.amount.to_f)
+      data << { y: trans.dt, a: balance} #So that you get a point above
+      data << { y: trans.dt, a: balance+=change } #get the change
+    end
+    data
+  end
 end
