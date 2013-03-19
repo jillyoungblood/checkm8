@@ -13,9 +13,7 @@ describe 'Users' do
       click_link('New Account')
       page.should have_button('Create User')
     end
-  end
-  describe 'JS cancel_user_form()' do
-    it 'removes the new user form', :js => true do
+    it 'removes the new user form when the cancel button is clicked', :js => true do
       visit root_path
       click_link('New Account')
       click_button('Cancel')
