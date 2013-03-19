@@ -13,6 +13,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'rspec-rails'
