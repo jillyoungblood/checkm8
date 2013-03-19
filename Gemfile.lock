@@ -203,7 +203,7 @@ DEPENDENCIES
   bcrypt-ruby
   binding_of_caller
   capybara
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   database_cleaner
   factory_girl_rails
   guard-rspec
@@ -219,5 +219,5 @@ DEPENDENCIES
   rails
   rb-fsevent
   rspec-rails
-  sass-rails (~> 3.2.3)
-  uglifier (>= 1.0.3)
+  sass-rails
+  uglifier
