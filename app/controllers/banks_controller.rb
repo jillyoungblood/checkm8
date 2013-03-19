@@ -1,4 +1,4 @@
-class BanksController < ActionController::Base
+class BanksController < ApplicationController
 def show
   @bank = Bank.find(params[:id])
   @transactions = Transaction.where
