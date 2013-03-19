@@ -12,11 +12,7 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do
-  factory :transaction, :class=>Transaction do
-    amount  '100.00'
-    from    'Bank of America'
-    to      'Chase'
-    dt      '3/20/2013'
-  end
+class Transaction < ActiveRecord::Base
+  attr_accessible :amount, :from, :to,:user_id
+  belongs_to :user
 end
