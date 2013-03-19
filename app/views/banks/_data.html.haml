@@ -1,1 +1,13 @@
-This will be the data views
+%table
+  -@bank.transactions.each do |trans|
+    %tr
+      %td
+        -if trans.from == @bank.name
+          Withdrawl
+        -else
+          Deposit
+      %td
+        =trans.amount
+      %td
+        =trans.dt
+
