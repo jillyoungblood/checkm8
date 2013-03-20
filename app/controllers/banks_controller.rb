@@ -11,6 +11,6 @@ class BanksController < ApplicationController
     @banks = Bank.order(:name)
   end
   def showgraph
-    render :json => Bank.first.transactionrecord
+    render :json => Bank.first.transactionrecord(@auth)
   end
 end

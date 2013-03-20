@@ -6,9 +6,18 @@
   .small-12
     %h1= @bank.name
 
+
+=link_to("New Transaction",trans_path,:class=>'button radius tiny', :remote => true)
+#trans_form
+
 #main_show
-  =render :partial => "data"
+  #data
+    =render :partial => "data"
+  #graph.hide
+    %script
+      getchartdata()
+
 
 = link_to('Transfer', new_transaction_path, :class=>'button radius tiny', :remote=>true)
 #transaction_form
-#graph
+
