@@ -27,8 +27,7 @@ class Bank < ActiveRecord::Base
     if auth.nil?
       []
     else
-        #k = Transaction.where(:to => self.name, user_id:  @auth.id)
-        k = Transaction.where(:to => self.name).select! {|trans| trans.user_id = auth.id }
+        k = Transaction.where(:to => self.name).select! {|trans| trans.user_id = auth.id } || []
         #objects.sort_by {|obj| obj.attribute}
         k << Transaction.where(:from => self.name).select! {|trans| trans.user_id = auth.id }
         #Transaction.where(:from => self.name)
@@ -36,7 +35,11 @@ class Bank < ActiveRecord::Base
     end
   end
   def sorted_trans(auth)
-    self.transactions(auth).sort_by {|obj| obj.dt}
+    if self.transactions(auth).first.present?
+      self.transactions(auth).sort_by {|obj| obj.dt}
+    else
+      []
+    end
   end
   def transactionrecord(auth)
     data =[]
