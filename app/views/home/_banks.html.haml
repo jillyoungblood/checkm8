@@ -1,8 +1,6 @@
 - if @auth.present?
   %table
     %tr
-      %td= link_to(bank.name, bank)
-      %td
       %th Bank
       %th Balance
     - @banks.each do |bank|
