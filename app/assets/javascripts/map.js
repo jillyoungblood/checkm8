@@ -1,7 +1,7 @@
 $(function(){
   $('#graphit').click(getchartdata);
 
-})
+});
 
 function getchartdata(){
   $.ajax({
@@ -31,7 +31,9 @@ $('#graph').empty();
 
 function cancel_trans(){
   $('#trans_form').empty();
+  $('#transaction_form').empty();
 }
 function cancel_form(){
+  $('#trans_form').empty();
   $('#transaction_form').empty();
 }

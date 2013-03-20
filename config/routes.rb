@@ -5,7 +5,7 @@ Checkm8::Application.routes.draw do
   resources :transactions, :only => [:new, :create]
 
   get "bank/graph" => 'banks#showgraph'
-
+  get "bank/data/:id" => 'banks#data', :as => :data
   get 'transaction/form' => 'transactions#trans', :as => :trans
   post "/transaction/tc" => 'transactions#tc', :as => :tc
 
