@@ -1,0 +1,8 @@
+%table
+  %tr
+    %th Bank
+    %th Balance
+  - @banks.each do |bank|
+    %tr
+      %td= link_to(bank.name, bank)
+      %td

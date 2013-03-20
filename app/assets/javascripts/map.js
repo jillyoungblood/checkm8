@@ -25,3 +25,7 @@ console.log(data);
 });
 
 }
+
+function cancel_trans(){
+  $('#trans_form').empty();
+}
