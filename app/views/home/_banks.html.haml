@@ -1,8 +1,12 @@
-%table
-  %tr
-    %th Bank
-    %th Balance
-  - @banks.each do |bank|
+- if @auth.present?
+  %table
     %tr
       %td= link_to(bank.name, bank)
       %td
+      %th Bank
+      %th Balance
+    - @banks.each do |bank|
+      %tr
+        %td= link_to(bank.name, bank)
+        %td= bank.ubalance(@auth)
+

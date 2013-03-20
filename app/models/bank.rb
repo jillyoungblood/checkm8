@@ -22,23 +22,42 @@ class Bank < ActiveRecord::Base
     Bank.all.map(&:name).sort.uniq
   end
 
-  def transactions
+  def transactions(auth)
     k=[]
-    k = Transaction.where(:to => self.name)
-    k << Transaction.where(:from => self.name)
-    k.flatten
+    if auth.nil?
+      []
+    else
+        k = Transaction.where(:to => self.name).select! {|trans| trans.user_id = auth.id } || []
+        #objects.sort_by {|obj| obj.attribute}
+        k << Transaction.where(:from => self.name).select! {|trans| trans.user_id = auth.id }
+        #Transaction.where(:from => self.name)
+        k.flatten
+    end
   end
-  def sorted_trans
-    self.transactions.sort_by {|obj| obj.dt}
+  def sorted_trans(auth)
+    if self.transactions(auth).first.present?
+      self.transactions(auth).sort_by {|obj| obj.dt}
+    else
+      []
+    end
   end
-  def transactionrecord
+  def transactionrecord(auth)
     data =[]
     balance = 0
-    self.sorted_trans.each do |trans|
+    self.sorted_trans(auth).each do |trans|
       change = (trans.from == self.name ? -trans.amount.to_f : trans.amount.to_f)
       data << { y: trans.dt, a: balance} #So that you get a point above
       data << { y: trans.dt, a: balance+=change } #get the change
     end
     data
+  end
+
+  def ubalance(auth)
+    balance = 0
+    self.sorted_trans(auth).each do |trans|
+      change = (trans.from == self.name ? -trans.amount.to_f : trans.amount.to_f)
+      balance += change
+    end
+    balance
   end
 end
