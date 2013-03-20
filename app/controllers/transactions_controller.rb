@@ -6,6 +6,9 @@ class TransactionsController < ApplicationController
     @trans= Transaction.new
   end
   def tc #nicks create
-    ###
+    t = Transaction.create(params[:transaction])
+    t.dt = Time.now
+    binding.pry
+    t.save
   end
 end
