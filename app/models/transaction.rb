@@ -15,4 +15,6 @@
 class Transaction < ActiveRecord::Base
   attr_accessible :amount, :from, :to,:user_id, :dt
   belongs_to :user
+  validates :amount, :numericality => true
+  validates :amount, :numericality => {:greater_than => 0}
 end
