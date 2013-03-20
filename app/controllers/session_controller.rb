@@ -15,5 +15,6 @@ class SessionController < ApplicationController
     session[:user_id] = nil
     @auth = nil
     authentication
+    redirect_to(root_path)
   end
 end
