@@ -1,9 +1,9 @@
 .row
   .large-6.columns
     = form_tag '/login', :remote => true do
-      = label_tag :email
+      = label_tag :email, nil, :class => 'form_text'
       = text_field_tag :email, nil, :autofocus => true
-      = label_tag :password
+      = label_tag :password, nil, :class => 'form_text'
       = password_field_tag :password
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius')
       = submit_tag 'Log In', :class => 'button tiny radius'

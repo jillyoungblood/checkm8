@@ -17,4 +17,3 @@ class SessionController < ApplicationController
     authentication
     end
   end
-end
