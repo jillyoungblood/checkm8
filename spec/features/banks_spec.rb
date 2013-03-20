@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'Banks' do
-l
   describe 'GET /' do
     it 'displays a list of banks' do
       ['Bank of America', 'HSBC', 'Citibank'].each do |name|
@@ -18,6 +17,7 @@ l
     it 'banks should appear alphabetically', :js => true do
       ['Bank of America', 'HSBC', 'Citibank'].each do |name|
         FactoryGirl.create(:bank, :name => name)
+      end
       visit root_path
       page.should have_css('table tr:nth-child(2) td:nth-child(1)', :text => 'Bank of America')
       page.should have_css('table tr:nth-child(3) td:nth-child(1)', :text => 'Citibank')
