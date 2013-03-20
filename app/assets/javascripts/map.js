@@ -14,6 +14,9 @@ function getchartdata(){
 
 function displaychart(data ){
 console.log(data);
+$('#trans_form').empty();
+$('#data').empty();
+$('#graph').empty();
  Morris.Line({
   element: 'graph',
   data: data,
