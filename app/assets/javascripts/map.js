@@ -32,3 +32,6 @@ $('#graph').empty();
 function cancel_trans(){
   $('#trans_form').empty();
 }
+function cancel_form(){
+  $('#transaction_form').empty();
+}
