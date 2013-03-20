@@ -1,7 +1,6 @@
 <% if session[:user_id].present? %>
-  $('.nav-bar ul').empty().append('<%=j render(:partial => 'logout_link') %>');
-  show_or_hide_login_register_links();
-  $('#anonymous').hide();
+  $('#form').empty()
+  $('#banks').empty().append('<%=j render(:partial => 'home/banks') %>')
 <% else %>
   $('#form').empty().append('<%=j render(:partial => 'form') %>');
 <% end %>

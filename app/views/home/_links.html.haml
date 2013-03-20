@@ -1,0 +1,6 @@
+- if @auth.nil?
+  = link_to('New Account', new_user_path, :remote => true, :class => 'button large radius')
+  = link_to('Login', login_path, :remote => true, :class => 'button large radius')
+- else
+  = link_to('Add Bank', new_bank_path, :remote => true, :class => 'button large radius success')
+  = link_to(@auth.name, login_path, :remote => true, :method => :delete, :class => 'button large radius alert')
