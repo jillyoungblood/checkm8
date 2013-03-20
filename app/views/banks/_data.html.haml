@@ -1,13 +1,14 @@
-%table
-  -@bank.transactions(@auth).each do |trans|
-    %tr
-      %td
-        -if trans.from == @bank.name
-          Withdrawl
-        -else
-          Deposit
-      %td
-        =trans.amount
-      %td
-        =trans.dt
+-if @bank.transactions(@auth).first.present?
+  %table
+    -@bank.transactions(@auth).each do |trans|
+      %tr
+        %td
+          -if trans.from == @bank.name
+            Withdrawl
+          -else
+            Deposit
+        %td
+          =trans.amount
+        %td
+          =trans.dt
 

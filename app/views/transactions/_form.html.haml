@@ -1,9 +1,10 @@
 = form_for @transaction, :remote=>true do |f|
+  = f.hidden_field :user_id
   = f.label         :from
   = f.select        :from, options_for_select(Bank.all_names)
   = f.label         :to
   = f.select        :to, options_for_select(Bank.all_names)
   = f.label         :amount
   = f.text_field    :amount
-  = link_to "Cancel", nil, :class=>'button radius tiny alert, :remote=>true'
+  = button_to_function('Cancel', 'cancel_form()',:class => 'button radius tiny alert')
   = f.submit "Create Transaction", :class=>'button radius tiny success'
