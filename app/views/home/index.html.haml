@@ -2,14 +2,14 @@
 #container
   .row
   .large-12.columns
-    %br
-    = link_to('New Account', new_user_path, :remote => true, :class => 'button large radius')
-    = link_to('Login', login_path, :remote => true, :class => 'button large radius')
+    / %br
+    / = link_to('New Account', new_user_path, :remote => true, :class => 'button large radius')
+    / = link_to('Login', login_path, :remote => true, :class => 'button large radius')
 #transaction_form
 .row
   .large-12.columns
     #links
-      / = render :partial => 'links'
+      = render :partial => 'links'
     #form
     #banks
       = render :partial => 'banks'
