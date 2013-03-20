@@ -5,5 +5,5 @@
   = f.select        :to, options_for_select(Bank.all_names)
   = f.label         :amount
   = f.text_field    :amount
-  = link_to "Cancel", :class=>'button radius tiny alert, :remote=>true'
+  = link_to "Cancel", nil, :class=>'button radius tiny alert, :remote=>true'
   = f.submit "Create Transaction", :class=>'button radius tiny success'
