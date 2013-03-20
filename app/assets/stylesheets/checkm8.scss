@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+
 body
 {
   background: url('pie-lady.jpg') no-repeat center center fixed;
@@ -6,11 +8,11 @@ body
   -o-background-size: cover;
   background-size: cover;
 }
-
+/*
 #thumbs
 {
   opacity: 0.2;
-}
+}*/
 
 .login_form
 {
@@ -23,13 +25,41 @@ body
   margin-top: 50px;
   background-color: #2185C5;
 }
-
+/*
 .subheader
 {
   color: #2185C5
 }
-
+*/
 .reveal-overlay
 {
   width: 400px;
+  margin-left: 50px;
 }
+
+.reveal-modal
+{
+  position: absolute;
+  padding-right: 150px;
+}
+
+.subheader
+{
+font-family: 'Raleway', sans-serif;
+font-size: 48px;
+color: white;
+
+width: 225px;
+}
+
+.button-group
+{
+  float: right;
+}
+/*
+h1
+{
+  float: right;
+  margin-right: 5px;
+  color: #2185C5
+}*/
