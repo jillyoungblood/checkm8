@@ -1,7 +1,4 @@
-.row
-  .large-6.columns
-    #formid
-      .reveal-modal{:class => "[medium]", :class => 'reveal-overlay', :id => 'formid'}
+ .reveal-modal{:class => "[medium]", :class => 'reveal-overlay', :id => 'formid'}
         = form_tag '/login', :remote => true do
           = label_tag :email
           = text_field_tag :email, nil, :autofocus => true
@@ -10,4 +7,3 @@
           = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius')
           = submit_tag 'Log In', :class => 'button tiny radius'
       %a.close-reveal-modal ×
-  .large-6.columns

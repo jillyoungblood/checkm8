@@ -15,10 +15,24 @@
   <div id='body'><%= render :partial => 'layouts/body' %></div>
   <div id='footer'><%= render :partial => 'layouts/footer' %></div>
 
+
+<div class='reveal-modal [small] reveal-overlay' id='formid'>
+        <%= form_tag '/login', :remote => true do %>
+          <%= label_tag :email %>
+          <%= text_field_tag :email, nil, :autofocus => true %>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+          <%= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius') %>
+          <%= submit_tag 'Log In', :class => 'button tiny radius' %>
+       <%= link_to "x", :class => 'close-reveal-modal' %>
+       <%end%>
+</div>
+
+
+
   <script>
   $(document).foundation();
   </script>
-  <%= javascript_include_tag params[:controller] %>
 
 </body>
 </html>
