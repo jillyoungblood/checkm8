@@ -27,20 +27,22 @@ describe 'Banks' do
     it 'shows data and graph buttons for withdrawals and deposits' do
       bank = FactoryGirl.create(:bank)
       visit bank_path(bank)
-      page.should have_text('Deposits')
-      page.should have_text('Withdrawals')
-      page.should have_css('#deposits button', :text => 'Data' )
-      page.should have_css('#deposits button', :text => 'Graph' )
-      page.should have_css('#withdrawals button', :text => 'Data' )
-      page.should have_css('#withdrawals button', :text => 'Graph' )
+      page.should have_button('Data')
+      page.should have_button('Graph')
     end
   end
 
   describe 'Deposits data button' do
     it 'shows deposit data when that button is clicked' do
       bank = FactoryGirl.create(:bank)
-      ['3/01/2013', '3/05/2013']
+      ['3/01/2013', '3/05/2013', '3/10/2013'].each do |dt|
+        FactoryGirl.create(:transaction, :dt=> dt)
+      end
       visit bank_path(bank)
+      click_button('Data')
+      page.should have_text('Chase')
+      click_button('Graph')
+      page.should have_css('#graph')
     end
   end
 end
