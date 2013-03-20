@@ -4,6 +4,6 @@ class BanksController < ApplicationController
     @bank = Bank.find(params[:id])
   end
   def showgraph
-    render :json => Bank.first.transactionrecord
+    render :json => Bank.first.transactionrecord(@auth)
   end
 end

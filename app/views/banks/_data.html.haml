@@ -1,5 +1,5 @@
 %table
-  -@bank.transactions.each do |trans|
+  -@bank.transactions(@auth).each do |trans|
     %tr
       %td
         -if trans.from == @bank.name
